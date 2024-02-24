@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexBox</title>
+    <link rel="stylesheet" href="./../src/style/index.css">
+    <link rel="shortcut icon" href="./../src/img/css.jpg" type="image/x-icon">
+</head>
+<body>
+  <nav>
+    <div class="nav_title"><a href="./../index.html">Rangkuman CSS</a></div>
+    <div class="nav_bar" id="navBar">
+      <div class="nav_link"><a href="./css-dasar.html" >CSS Dasar</a></div>
+      <div class="nav_link"><a href="./css-layout-dasar.html" >CSS Layout Dasar</a></div>
+      <div class="nav_link"><a href="./flex-box.html" >CSS Layout(FlexBox)</a></div>
+      <div class="nav_link"><a href="./grid.html" >CSS Layout(Grid)</a></div>
+      <div class="nav_link"><a href="./responsive-web-design.html" >Responsive Web Design</a></div>
+    </div>
+    <div class="nav_menu" id="navMenu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+      </svg>
+    </div>
+  </nav>
+      <main>
+        <h1 class="title">FlexBox</h1>
+        <p>Pada module flexbox ini dapat kita bagi menjadi dua kelompok, yaitu <b>layouting properties</b> dan <b>alignment properties</b></p>
+        
+        <!-- Layouting Properties -->
+        <article>
+          <h2><b>Layouting Properties</b></h2>
+          <p>Properti-properti ini berfungsi untuk mengatur tataletak komponen-komponen element</p>
+          <ol>
+            <li class="sub_container" id="flex">
+              <h2>Flex(<'flex-grow'> <'flex-shrink'> <'flex-basis'>)</h2>
+              <p>flex merupakan shorthand dari property CSS yang dapat terdiri dari 3 properti yaitu <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow">flex-grow</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink">flex-shrink</a> dan <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink">flex-basis</a></p>
+              <p>Property flex dapat berisikan 1,2 dan 3 value, tiap value memiliki tugasnya masing-masing. ada yang menentukan <b>tingkat pelebaran element(flex-grow)</b>, ada yang mengatur <b>tingkat penyusutan element(flex-shrink)</b> dan ada pula yang mengatur <b>lebar awal element(flex-basis)</b> </p>
+<pre>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex" class="doc"></a> <a href="https://codepen.io/sindu12/pen/MWxpLPr" class="prac"></a>
+/* One value: flex-grow */
+flex: 1;
+
+/* Two values: flex-grow | flex-basis */
+flex: 1 30px;
+
+/* Two values: flex-grow | flex-shrink */
+flex: 2 2;
+
+/* Three values: flex-grow | flex-shrink | flex-basis */
+flex: 2 2 10%;
+</pre>
+              <ol type="a">
+                <li id="flex-grow">
+                  <h3>flex grow</h3>
+                  <p>Flex grow berfungsi untuk <b>menentukan lebar</b> child dari sebuah container flex.</p>
+                  <p><b>Arah lebar</b> dari flex-grow mengikuti main axis atau arah sumbu yang di atur oleh <b>value flex-direction</b>. jika <b>flex-direction:row;</b> maka <b>flex-grow melebar secara horizontal</b>, jika <b>flex-direction:column;</b> maka <b>flex-grow melebar secara vertikal</b></p>
+<pre>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow" class="doc"></a> <a href="https://codepen.io/sindu12/pen/rNRyRmP" class="prac"></a>
+  /* < number > values */
+  flex-grow: 3;
+  flex-grow: 0.6;
+</pre>
+                </li>
+                <li id="flex-shrink">
+                  <h3>flex-shrink</h3>
+                  <p>Kalo flex-grow berfungsi untuk mengatur tingkat pelebaran, maka sebaliknya flex-shrink berfungsi untuk <b>mengatur tingkat penyusutan</b>.</p>
+                  <p><b>Sama seperti flex-grow</b>, arah <b>penyusutannya mengikuti main exis(arah sumbu)</b>, jika value flex-direction:row; maka penyusutan secra horizontal dan sebaliknya</p>
+<pre>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink" class="doc"></a> <a href="https://codepen.io/sindu12/pen/rNRygpp?editors=1100" class="prac"></a>
+  /* < number > values */
+  flex-shrink: 2;
+  flex-shrink: 0.6;
+</pre>
+                </li>
+                <li id="flex-basis">
+                  <h3>flex-basis</h3>
+                  <p>Flex-basis berfungsi untuk menentukan pada ukuran awal dari element dan pada ukuran tersebut property <b>flex-grow</b> dan <b>flex-shrink</b> mulai bekerja</p>
+<pre>
+  <a href="https://developer.mozilla.org/en-US/Web/CSS/flex-basis" class="doc"></a>
+
+  /* Specify <'width'> */
+flex-basis: 10em;
+flex-basis: 3px;
+flex-basis: 50%;
+flex-basis: auto;
+</pre>
+                </li>
+              </ol>
+              
+            </li>
+            <li class="sub_container" id="flex-flow">
+              <h2>flex-flow(<'flex-direction'> <'flex-wrap'>)</h2>
+              <p>flex flow merupakan shorthan atau <b>gabungan dari flex-direction dan flex-wrap</b></p>
+<pre>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-flow" class="doc"></a> <a href="https://codepen.io/sindu12/pen/PoLmoaK" class="prac"></a>
+  /* flex-flow: <'flex-direction'> and <'flex-wrap'> */
+flex-flow: row nowrap;
+flex-flow: column wrap;
+flex-flow: column-reverse wrap-reverse;
+
+</pre>
+              <ol type="a">
+                <li id="flex-direction">
+                  <h2>flex-direction</h2>
+                  <p>Flex direction berfungsi untuk memberikan arah main exis(sumbu) pada element yang berada di dalam parent flex.</p>
+                  <p>row / row-reverse => horizontal</p>
+                  <p>column / column-reverse => vertikal</p>
+    <pre>
+      <a href="https://developer.mozilla.org/en-US/Web/CSS/flex-direction" class="doc"></a> <a href="https://codepen.io/sindu12/pen/zYbZQXJ" class="prac"></a>
+      /* The direction text is laid out in a line */
+      flex-direction: row;
+      
+      /* Like < row >, but reversed */
+      flex-direction: row-reverse;
+      
+      /* The direction in which lines of text are stacked */
+      flex-direction: column;
+      
+      /* Like < column >, but reversed */
+      flex-direction: column-reverse;
+    </pre>
+                </li>
+                <li id="flex-wrap">
+                  <h2>flex-wrap</h2>
+                  <p>Property yang berfungsi untuk menentukan apakah flex items dipaksakan dibungkus pada satu line atau dapat di bungkus dalam multiple line</p>
+    <pre>
+      <a href="https://developer.mozilla.org/en-US/Web/CSS/flex-wrap" class="doc"></a>
+    
+      flex-wrap: nowrap; /* Default value */
+    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
+    </pre>
+                </li>
+              </ol>
+            </li>
+            <li class="sub_container" id="order">
+              <h2>order</h2>
+              <p>Property ini berfungsi untuk <b>mengatur urutan posisi</b> flex item</p>
+<pre>
+  <a href="https://developer.mozilla.org/en-US/Web/CSS/order" class="doc"></a>
+</pre>
+            </li>
+          </ol>
+        </article>
+
+        <!-- aligment properties -->
+        <article>
+          <h2><b>Alignment Propeties</b></h2>
+          <ol>
+            <li class="sub_container" id="place-content">
+              <h2>place-content (<'align-content'> <'justify-content'>)</h2>
+              <p>Property palce-contetn merupakan shorthand dari gabungan dua property align-content dan justify-content</p>
+<pre>
+  <a href="https://developer.mozilla.org/en-US/Web/CSS/place-content" class="doc"></a> <a href="https://codepen.io/sindu12/pen/JjzJogJ?editors=1100" class="prac"></a>
+</pre>
+            </li>
+            <li class="sub_container">
+              <h2></h2>
+              <p></p>
+            </li>
+            <li class="sub_container">
+              <h2></h2>
+              <p></p>
+            </li>
+            <li class="sub_container">
+              <h2></h2>
+              <p></p>
+            </li>
+            <li class="sub_container">
+              <h2></h2>
+              <p></p>
+            </li>
+            <li class="sub_container">
+              <h2></h2>
+              <p></p>
+            </li>
+          </ol>
+        </article>
+      </main>
+      <script src="./../src/js/index.js"></script>
+</body>
+</html>

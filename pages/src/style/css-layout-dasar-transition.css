@@ -1,0 +1,35 @@
+
+
+/* transition example style */
+.container-transition-example 
+{width: 90%; height: max-content; padding: 5px; border: 5px solid rgb(0, 255, 0); display: flex;}
+.container-transition-example:hover .property,
+.container-transition-example:hover .ease,
+.container-transition-example:hover .ease-in,
+.container-transition-example:hover .ease-out,
+.container-transition-example:hover .ease-in-out,
+.container-transition-example:hover .linear,
+.container-transition-example:hover .cubic-bazier
+{transform: translate(605px);}
+.container-transition-example:hover .property
+{background-color: maroon;}
+.box-transition-example 
+{width:100px; height:100px; background-color:rgb(0, 255, 0); transition-duration: .5s;}
+.property
+{transition-property: translate; transition-timing-function: ease;}
+.ease
+{transition-timing-function: ease}
+.ease-in
+{transition-timing-function: ease-in}
+.ease-out
+{transition-timing-function: ease-out}
+.ease-in-out
+{transition-timing-function: ease-in-out}
+.linear
+{transition-timing-function:linear}
+.cubic-bazier
+{transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);}
+.delay
+{transition-delay: .5s;}
+
+

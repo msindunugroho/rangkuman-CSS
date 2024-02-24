@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Dasar</title>
+    <link rel="stylesheet" href="./../src/style/index.css">
+    <link rel="shortcut icon" href="./../src/img/css.jpg" type="image/x-icon">
+</head>
+<body>
+  <nav>
+    <div class="nav_title"><a href="./../index.html">Rangkuman CSS</a></div>
+    <div class="nav_bar" id="navBar">
+      <div class="nav_link"><a href="./css-dasar.html" >CSS Dasar</a></div>
+      <div class="nav_link"><a href="./css-layout-dasar.html" >CSS Layout Dasar</a></div>
+      <div class="nav_link"><a href="./flex-box.html" >CSS Layout(FlexBox)</a></div>
+      <div class="nav_link"><a href="./grid.html" >CSS Layout(Grid)</a></div>
+      <div class="nav_link"><a href="./responsive-web-design.html" >Responsive Web Design</a></div>
+    </div>
+    <div class="nav_menu" id="navMenu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+      </svg>
+    </div>
+  </nav>
+    <main>
+        <h1 class="title">CSS Dasar</h1>
+        <article title="CSS-Dasar" id="css-dasar">
+          <ol>
+            <li class="sub_container" id="apa-itu-css">
+              <h2 class="sub">Apa itu CSS?</h2>
+<pre>
+  <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/What_is_CSS" class="doc"></a>
+</pre>
+            </li>
+            <li class="sub_container" id="penempatan-css">
+              <h2 class="sub">Penempatan CSS</h2>
+<pre>
+  <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_is_structured" class="doc"></a>
+</pre>
+              <p>terdapat tiga penempatan css yang bisa dilakukan</p>
+              <ol type="A">
+                <li>
+                  <h3>Embed / Internal</h3>
+                  <p>
+                    dengan menggunakan tag <b>style</b>, didalam tag head pada
+                    file HTML
+                  </p>
+                </li>
+                <li>
+                  <h3>Inline</h3>
+                  <p>
+                    di letakan di dalam sebuah tag yang ingin diberikan style CSS,
+                    dengan menambahkan attribute <b>style=""</b>
+                  </p>
+                </li>
+                <li>
+                  <h3>Eksternal</h3>
+                  <p>
+                    menggunakan file terpisah dari file HTML dengan extention
+                    <b>.css</b>, contoh: <b>index.css</b>. untuk menghubungkan
+                    file HTML dengan file css eksternal tersebut dapat menggunakan
+                    <b
+                      >tag link dengan attribute rell="stylesheet" dan
+                      src=""(menuju file CSS yang di tuju)</b
+                    >
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li class="sub_container" id="font-styling">
+              <h2 class="sub">font styling</h2>
+              <p>beberapa <b>properti</b> yang dimiliki oleh CSS dalam mengatur <b>font</b>:</p>
+<pre>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font" class="doc"></a>
+<a href="https://codepen.io/sindu12/pen/YzgWgNa" class="prac"></a>
+shortcut:
+  /* font-size font-family */
+font: 1.2em "Fira Sans", sans-serif;
+
+/* font-size/line height font-family */
+font: 1.2em/2 "Fira Sans", sans-serif;
+
+/* font-style font-weight font-size font-family */
+font: italic bold 1.2em "Fira Sans", sans-serif;
+
+/* font-stretch font-variant font-size font-family */
+font: ultra-condensed small-caps 1.2em "Fira Sans", sans-serif;
+
+/* system font */
+font: caption;
+
+</pre>
+              <ol type="A">
+                <li>
+                  <h3>font-family</h3>
+                  <p>mengatur <b style="font-family: 'Courier New', Courier, monospace;">jenis font</b>(menggunakan font-family: 'Courier New', Courier, monospace) yang akan digunakan</p>
+                </li>
+                <li>
+                  <h3>font-size</h3>
+                  <p>mengatur <b style="font-size: 30px;">ukuran font</b>(menggunakan font-size:30px)</p>
+                </li>
+                <li>
+                  <h3>font-weight</h3>
+                  <p>mengatur <b style="font-weight: 900;">ketebalan font</b>(menggunakan font-weight:900;)</p>
+                </li>
+                <li>
+                  <h3>font-variant</h3>
+                  <p>mengubah font menjadi <b style="font-variant: small-caps;">small caps</b>(menggunakan properti font "small-caps")</p>
+                </li>
+                <li>
+                  <h3>font style</h3>
+                  <p>mengubah font menjadi bercetek<b style="font-style: italic;">miring</b>(menggunakan font-style: italic) </p>
+                </li>
+                <li>
+                  <h3>line height</h3>
+                  <p>mengatur <b style="line-height: 20px;">spasi antar baris</b>(menggunakan line-height:20px)</p>
+                </li>
+              </ol>
+              <!-- <img src="" alt="font-shorthand">  -->
+            </li>
+            <li class="sub_container" id="text-styling">
+              <h2 class="sub">text styling</h2>
+              <p>Terdapat banyak properti css dalam mengatur styling text:</p>
+<pre>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align" class="doc"></a>
+</pre>
+              <p>berikut beberapa styling pada text yang bisasa di gunakan:</p>
+              <ol type="A">
+                <li>
+                  <h3>color</h3>
+                  <p>untuk mwmbrerikan <b style="color: coral;">warna</b></p>
+                </li>
+                <li>
+                  <h3>text align</h3>
+                  <p style="text-align: center;">berfungsi untuk mengatur format paragraf/text</p>
+                </li>
+                <li>
+                  <h3>text indent</h3>
+                  <p style="text-indent: 30px;"> berfungsi untuk mengatur indentasi paragraf atau text</p>
+                </li>
+                <li>
+                  <h3>text decoration</h3>
+                  <p style="text-decoration: line-through;"">berfungsi untuk memberikan dekorasi</p>
+<pre>
+   <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration" class="doc"></a>
+  text-decoration-line: <u style="text-decoration-line:line-through;">Mengatur Posisi Garis</u>
+  text-decoration-color: <u style="text-decoration-color: red; text-decoration-line:line-through;">Mengatur warna</u>
+  text-decoration-thickness: <u style="text-decoration-thickness: 4px; text-decoration-color: red; text-decoration-line:line-through;">Mengatur Ketebalan</u>
+  text-decoration-style: <u style="text-decoration-style: wavy; text-decoration-thickness: 4px; text-decoration-color: red; text-decoration-line:line-through;">Mengatur Style Garis</u>
+  text-decoration-style: <u style="text-decoration-style: solid; text-decoration-thickness: 2px; 
+  text-decoration-color: red; text-decoration-line: underline; text-decoration-skip-ink: auto; font-size: 1.2rem;">ngeskip garis yang besringgungan dengan teks</u>
+</pre>
+                </li>
+                <li>
+                  <h3>text transform</h3>
+                  <p style="text-transform: uppercase;">me-transformasi text</p>
+                </li>
+                <li>
+                  <h3>letter spacing</h3>
+                  <p>mengukur spasi antar <b style="letter-spacing: 7px;">huruf</b></p>
+                </li>
+                <li>
+                  <h3>word spacing</h3>
+                  <p>mengatur spasi <b style="word-spacing: 12px;">antar kata</b></p>
+                </li>
+              </ol>
+            </li>
+            <li class="sub_container" id="background">
+              <h2 class="sub">Background</h2>
+              <p>Properti background merupakan <b>shorthand</b> yang berfungsi untuk <b>mengatur semua properti background style menjadi satu properti</b>, seperti bg-color, bg-image, bg-size, bg-repeat, bg-position:</p>
+<pre>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background#constituent_properties" class="doc"></a>
+  /* bg-image | bg-attachment | bg-repeat | bg-clip | bg-origin | bg-image */
+  background: url("image.jpg") fixed no-repeat content-box padding-box, linear-gradient(to bottom, #00f, #fff)  ;
+</pre>
+              <ol type="A">
+                <li>
+                  <h3>background-attachment</h3>
+                  <p>Properti background-attachment berfungsi unutk <b>mengatur</b> apakah <b>posisi background-image fixed</b> terhadap <b>viewport</b> ataukan scroll bersamaan dengan block yang berada didalamnnya</p>
+<pre>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-attachment" class="doc"></a> <a href="https://codepen.io/sindu12/pen/PoLbrRa?editors=1100" class="prac"></a>
+</pre>
+                </li>
+                <li>
+                  <h3>background-color</h3>
+                  <p>berfungsi untuk <b>mengatur warna background</b></p>
+                </li>
+                <li>
+                  <h3>background-image</h3>
+                  <p><b>mengatur gambar</b> yang akan digunakan pada <b>background</b></p>
+                  <p>cara penggunaannya seperti berikut:</p>
+  <pre>
+    background-image: url(./photo-example.png);
+  </pre>
+                  <p>Secara default background image akan <b>me-repeat</b> terhadap sumbu x (horizontal) dan sumbu y(vertikal). untuk mengatur pperulangan/repeat, kita dapat menggunakan properti <b>background-repeat:..;</b></p>
+                </li>
+                <li>
+                  <h3>background-repeat</h3>
+                  <p>mengatur jenis <b>perulangan gambar</b> pada background</p>
+                  <p>terdapat beberapa value pada background-repeat:</p>
+  <pre>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat" class="doc"></a>
+    background-repeat: repeat;    //melakukan perulangan sumbu x dan y
+    background-repeat: repeat-x;  //melakukan perulangan sumbu x saja
+    background-repeat: repeat-y;  //melakukan perulangan sumbu y saja
+    background-repeat: no-repeat; //tidak melakukan perulangan
+  </pre>
+                  <p><b>!!JIKA!!</b> pada properti<b>background-repeat</b> menggunakan value <b>no-repeat</b>, maka kita memiliki <b>akses</b> dalam menggunakan properti <b>background-position</b></p>
+                </li>
+                <li>
+                  <h3>background-position</h3>
+                  <p>mengatur <b>posisi gambar</b> pada background</p>
+  <pre>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position" class="doc"></a>
+    background-position: top left;  // x | y
+    background-position: 10px 20px
+    background-position: 10% 20%
+  
+    short hand:
+      > background: color url() position repeat;
+      > background: coral url(./ex.png) top left no-repeat;
+  </pre>
+                </li>
+              </ol>
+            </li>
+            <li class="sub_container" id="selector">
+              <h2 class="sub">selectors</h2>
+              <p>Digunakan untuk mengenali sebuah <b>element HTML</b> yang akan diberikan style</p>
+              <p>Terdapat banyak selector yang bisa di gunakan sesuai kebutuhan:</p>
+              <ol 
+                type="A" 
+                style=" display: flex; width: 96.5%; height: max-content; text-indent: 0; overflow: auto; flex-direction: row; gap: 100px; justify-content: start; align-items: start; box-sizing: border-box;">
+                <li style="min-width: 750px; margin-top:50px;">
+                  <h3>Selector Dasar</h3>
+<pre style="width: 800px;">
+<b>> Universal Selector (*):</b>
+  Memilih semua elemen pada halaman.
+  * {
+    /* Rules */
+  }
+
+<b>> Element Selector:</b>
+  Memilih elemen berdasarkan tagnya.
+  h1, h2, h3 {
+    /* Rules */
+  }
+
+<b>> Class Selector (.):</b>
+  Memilih elemen berdasarkan kelasnya.
+  .my-class {
+    /* Rules */
+  }
+
+<b>> ID Selector (#):</b>
+  Memilih elemen berdasarkan ID-nya.
+  #my-id {
+    /* Rules */
+  }
+  
+</pre>
+                </li>
+                <li style="margin-top:50px; min-width: 750px;">
+                  <h3>Selector Attribute</h3>
+<pre style="width: 800px;">
+<b>> Attribute Selector ([attribute="value"]):</b>
+  Memilih elemen berdasarkan atributnya.
+  label[for="attribute-selector"] {
+    /* Rules */
+  }
+  
+  < label <u>for="attribute-selector"</u>>Username:< /label>
+  < input type="text" name="" id="attribute-selector">
+  < label for="attribute-sele">Full Name:< /label>
+  < input type="text" name="" id="attribute-sele">
+
+  nb: penggunaannya bisa seperti ini: <b>label[for]{...}</b>, jadi tidak
+  tidak menggunakan value attributnya, cukup attribute name-nya saja
+  <b>kalo emang mau menuju element yang memiliki attribute "for"</b>
+
+
+<b>> Attribute Starts With Selector ([attribute^="value"]):</b>
+  Memilih elemen yang memiliki atribut dengan <b>value awal</b> 
+  yang sesuai dengan selector
+  [class^="lower"] {
+    /* Rules */
+  }
+
+  < p class="upper-par-weight-normal">Lorem ipsum dolor sit.< /p>
+  < p class="<u>lower</u>-par-weight-normal">Lorem ipsum dolor sit.< /p>
+  < p class="<u>lower</u>-par-weight-normal">Lorem ipsum dolor sit.< /p>
+  < p class="par-weight-normal">Lorem ipsum dolor sit.< /p>
+
+
+<b>> Attribute Ends With Selector ([attribute$="value"]):</b>
+  Memilih elemen yang memiliki atribut dengan <b>value akhir</b> 
+  yang sesuai dengan selector.
+  [class$="normal"] {
+    /* Rules */
+  }
+  
+  < p class="upper-par-weight-<u>normal</u>">Lorem ipsum dolor sit.< /p>
+  < p class="lower-par-weight-<u>normal</u>">Lorem ipsum dolor sit.< /p>
+  < p class="lower-par-weight-<u>normal</u>">Lorem ipsum dolor sit.< /p>
+  < p class="par-weight-normal">Lorem ipsum dolor sit.< /p>
+
+
+<b>> Attribute Includes Word Selector ([attribute~="value"])</b>
+  Selector ini memilih elemen di mana nilai atribut tersebut <b>mengandung kata 
+  tertentu di antara spasi</b>. Ini berfokus pada kata-kata yang dipisahkan oleh 
+  spasi dalam nilai atribut.
+  [class~="button"] {
+    /* rules */
+  }
+  < button class="button-submit">< /button>
+  < button class="<u>button</u> btn-submit">< /button>
+  nb: penggunaan selector ini sama persis kaya penggunaan <b>class selector</b>
+
+
+<b>> Attribute Contains Selector ([attribute*="value"]):</b>
+  Selector ini memilih semua elemen di mana nilai atribut tersebut 
+  <b>mengandung substring</b> yang sesuai dengan nilai yang ditentukan.
+  [class*="center"] {
+    /* Rules */
+  }
+
+  < p class="lower-par-weight-normal-<u>center</u>">Lorem ipsum dolor sit.</>
+  < p class="lower-par-end-weight-normal">Lorem ipsum dolor sit.</>
+  < p class="lower-par-<u>center</u>-weight-normal">Lorem ipsum dolor sit.</>
+  < p class="lower-par-end-weight-normal">Lorem ipsum dolor sit.</>
+  
+
+<b>> Attribute Represents a Dash-Separated List of Values Selector (["class|="align"]):</b>
+  Selector ini digunakan untuk memilih elemen yang memiliki atribut tertentu di mana nilai 
+  atribut tersebut mengandung kata kunci tertentu baik yang dipisahkan oleh tanda hubung (-) 
+  atau hanya satu kata kunci tersebut pada value attribute
+  [class|="card"] {
+    /* rules */
+  }
+
+  < div class="<u>card</u>">
+    < div class="<u>card-</u>header">< /div>
+    < div class="<u>card-</u>body">< /div>
+  < /div>
+
+</pre>
+                </li>
+                <li style="margin-top:50px; min-width: 750px;">
+                  <h3>Selector Kombinator</h3>
+<pre style="width: 800px;">
+<b>> Descendant Selector (Whitespace):</b>
+  Memilih elemen yang berada di dalam elemen lain, tidak hanya langsung child.
+div p {
+  /* Rules */
+}
+
+< div>
+    < article>
+      <strong>< p>lorem< /p></strong>
+    < /article>
+    <strong>< p>lorem< /p></strong>
+< /div>
+< p>lorem< /p>
+
+
+<b>> Child Selector (>):</b>
+  Memilih elemen yang menjadi child <b>langsung</b> dari elemen parentnya.
+
+div > p {
+  /* Rules */
+}
+
+< div>
+    < article>
+      < p>lorem< /p>
+    < /article>
+  <strong>< p>lorem< /p></strong>
+< /div>
+< p>lorem< /p>
+
+
+<b>> Adjacent Sibling Selector (+):</b>
+  Memilih elemen yang merupakan saudara sejajar <b>(setelahnya)</b> langsung (sibling) dari
+  elemen sebelumnya. <b>!! Hanya satu saudara sejajar yang dipilih</b>
+div + p {
+  /* Rules */
+}
+
+< div>
+    < article>
+      < p>lorem< /p>
+    < /article>
+    < p>lorem< /p>
+< /div>
+<strong>< p>lorem< /p></strong>
+< p>lorem< /p>
+
+
+<b>> General Sibling Selector (~)</b>
+  Sama seperti Adjacent Sibling Selector, akan tetapi yang dipilih <b>semua</b>
+  saudara sejajarnya. <b>!! Hanya saudara sejajar setelahnya yang dipilih</b>
+div ~ p {
+  /* Rules */
+}
+
+< div>
+    < article>
+      < p>lorem< /p>
+    < /article>
+    < p>lorem< /p>
+< /div>
+<strong>< p>lorem< /p></strong>
+<strong>< p>lorem< /p></strong>
+</pre>
+                </li>
+                <li style="margin-top:50px; min-width: 750px;">
+                  <h3>Selector nth</h3>
+<pre style="width: 800px;">
+<b>> Nth Child Selector (:nth-child()):</b>
+  Memilih elemen berdasarkan posisinya sebagai child ke-n dari elemen parent.
+  li:nth-child(2) {
+  /* Rules */
+}
+
+<b>> First-of-type, Last-of-type, 
+  Nth-of-type Selector (:first-of-type, :last-of-type, :nth-of-type()):</b>
+  Memilih elemen berdasarkan tipe elemennya.
+p:first-of-type {
+  /* Rules */
+}
+</pre>
+                </li>
+                <li style="margin-top:50px; min-width: 750px;">
+                  <h3>Pseudo Classes Selector</h3>
+<pre style="width: 800px;">
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank">Selengkapnya di sini</a>
+</pre>
+
+                </li>
+                <li style="margin-top:50px; min-width: 750px;">
+                  <h3>Pseudo ELement Selector</h3>
+<pre style="width: 800px;">
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements" target="_blank">Selengkapnya disini</a>
+</pre>
+                </li>
+              </ol>
+            </li>
+            <li class="sub_container" id="pseudo-class">
+              <h2 class="sub">pseudo class</h2>
+              <p>Pseudo class adalah sebuah class <b>yang akan aktif pada keadaan tertentu</b>. terdapat beberapa tipe pseudo class:</p>
+              <h3>pseudo-class yang berhubungan dengan <b>link</b></h3>
+              <ol type="A">
+                <li>
+                  <h4>:link</h4>
+                  <p>style <b>default</b> pada sebuah link(anchor)</p>
+                </li>
+                <li>
+                  <h4>:hover</h4>
+                  <p>style yang akan aktif ketika krusor berada di atas element / link</p>
+                </li>
+                <li>
+                  <h4>:active</h4>
+                  <p>style yang aktif jika sebuah link / element di click</p>
+                </li>
+                <li>
+                  <h4>:visited</h4>
+                  <p>style yang akan aktif jika sebuah link <b>sudah pernah di kunjungi</b> sebelumnya(menggunakan browser yang sama)</p>
+                </li>
+              </ol>
+              <h3>pseudo-class yang berhubungan dengan posisi element</h3>
+              <ol type="A">
+                <li>
+                  <h4>:first-child</h4>
+                  <p>memilih element/child pertama dari sebuah parent</p>
+                </li>
+                <li>
+                  <h4>:last-child</h4>
+                  <p>memilih element/child terakhir dari sebuah parent</p>
+                </li>
+                <li>
+                  <h4>:nth-child(n)</h4>
+                  <p>memilih element ke-n dari sebuah parent, "n" memiliki beberapa pola</p>
+                  <ul>
+                    <li>
+                      <p>Pola berurut (1), (2), (3)...</p>
+                    </li>
+                    <li>
+                      <p>Pola kelipatan (2n), (2n+2), (3n-2)</p>
+                    </li>
+                    <li>
+                      <p><b>Genap</b>(event)</p>
+                    </li>
+                    <li>
+                      <p><b>Ganjil</b>(odd)</p>
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+  
+            </li>
+            <li class="sub_container" id="specificity">
+              <h2 class="sub">specificity</h2>
+              <p>setiap selector memiliki <b>berat</b> yang berbeda. berat tersebut menentukan <b>seberapa spesifi</b> sebuah element dapat dipilih oleh selector</p>
+              <ol type="A">
+                <li>
+                  <p>Element(p, h1-h6, div, span) => <b>0001</b></p>
+                </li>
+                <li>
+                  <p>class(.card; .nav_bar;) => <b>0010</b></p>
+                </li>
+                <li>
+                  <p>id(#form-input; #note-id_111;) => <b>0100</b></p>
+                </li>
+                <li>
+                  <p>Inline(< div style...>< /div >) => <b>1000</b></p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </article>
+    </main>
+      <script src="./../src/js/index.js"></script>
+</body>
+</html>

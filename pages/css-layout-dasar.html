@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Layout Dasar</title>
+    <link rel="stylesheet" href="./../src/style/index.css" />
+    <link rel="shortcut icon" href="./../src/img/css.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="./src/style/css-layout-dasar-transition.css" />
+    <link rel="stylesheet" href="./src/style/css-layout-dasar-animation.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav_title"><a href="./../index.html">Rangkuman CSS</a></div>
+      <div class="nav_bar" id="navBar">
+        <div class="nav_link"><a href="./css-dasar.html">CSS Dasar</a></div>
+        <div class="nav_link">
+          <a href="./css-layout-dasar.html">CSS Layout Dasar</a>
+        </div>
+        <div class="nav_link">
+          <a href="./flex-box.html">CSS Layout(FlexBox)</a>
+        </div>
+        <div class="nav_link"><a href="./grid.html">CSS Layout(Grid)</a></div>
+        <div class="nav_link">
+          <a href="./responsive-web-design.html">Responsive Web Design</a>
+        </div>
+      </div>
+      <div class="nav_menu" id="navMenu">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          class="bi bi-three-dots-vertical"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
+          />
+        </svg>
+      </div>
+    </nav>
+    <main>
+      <h1 class="title">CSS Layout Dasar</h1>
+      <article>
+        <ol>
+          <li class="sub_container" id="display">
+            <h2 class="sub">display</h2>
+            <p>
+              setiap element pada HTML berada dalam sebuah <b>kotak</b>.
+              properti <b>display</b> pada css mengatur perilaku kotak tersebut
+            </p>
+            <p>properti display memilik beberapa value:</p>
+            <ul>
+              <li>
+                <h3>inline</h3>
+                <p>
+                  element yang
+                  <b>secara default tidak menambahkan garis baru</b> ketika
+                  dibuat
+                </p>
+                <p>
+                  lebar dan tingginya <b>sebesar kontent</b> yang ada didalamnya
+                </p>
+                <p>Kita tidak bisa mengatur width dan height nya</p>
+                <pre>
+    b, strong, i, em, span, a, sub, sup, button, input, label, select, textarea
+</pre
+                >
+              </li>
+              <li>
+                <h3>inline-block</h3>
+                <p>
+                  Secara default <b>tidak</b> ada element HTML yang memiliki
+                  nilai display <b>inline-block</b>
+                </p>
+                <p>Harus secara manual mengubah nilai properti tersebut</p>
+                <p>
+                  Perilaku dasarnya <b>sama seperti inline</b>, perbedaannya
+                  elemen inline-block <b>dapat di atur width dan height</b>
+                </p>
+              </li>
+              <li>
+                <h3>block</h3>
+                <p>
+                  Element yang secara default
+                  <b>menambahkan garis baru</b> ketika dibuat
+                </p>
+                <p>
+                  Secara default
+                  <b>lebarnya akan memenuhi layar browser jika tidak di atur</b>
+                </p>
+                <pre>
+    p, div, h1-h6, ol, ul, li, form, hr
+</pre
+                >
+              </li>
+              <li>
+                <h3>none</h3>
+                <p>diguankan untuk menghilangkan element</p>
+              </li>
+            </ul>
+          </li>
+          <li class="sub_container" id="dimensi">
+            <h2 class="sub">dimensi</h2>
+            <p><b>width</b>, untuk mengatur lebar</p>
+            <p><b>height</b>, untuk mengatur tinggi</p>
+            <p>
+              satuan yang bisa kita set yaitu:
+              <b>px, %, <span style="color: red">in, cm, mm, pt, pc</span></b>
+            </p>
+          </li>
+          <li class="sub_container" id="overflow">
+            <h2 class="sub">overflow</h2>
+            <p>Berfungsi untuk mengatur prilaku content pada sebuah element</p>
+            <p>terdapat beberapa value pada properti overflow:</p>
+            <ol type="A">
+              <li>
+                <h3>visible</h3>
+                <p>Value visible(terlihat) adalah <b>value default</b></p>
+              </li>
+              <li>
+                <h3>auto</h3>
+                <p>
+                  Apabila content overflow terhadap element maka akan
+                  memunculkan scroll, akan tetapi jika konetnnya cukup maka
+                  tidak memunculkan overflow
+                </p>
+              </li>
+              <li>
+                <h3>hidden</h3>
+                <p>
+                  Apabila content melebihi element pembungkusnya maka content
+                  yang overflow tersebut akan di sembunyikan/hidden
+                </p>
+              </li>
+              <li>
+                <h3>scroll</h3>
+                <p>
+                  Apabila content overflow atau tidak scroll akan terus muncul
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li class="sub_container" id="box-model">
+            <h2 class="sub">box model</h2>
+            <p>Setiap element di halaman berada didalam box(kotak)</p>
+            <p>
+              kita bisa mengatur ukuran dan posisi kotak tersebut serta memberi
+              warna dan gambar
+            </p>
+            <pre>
+    <h3>Body in Box Model</h3>
+    <div class="box-model_body" style="position: relative; margin: auto; width: 300px; height: 300px; border: 2px solid red; padding: 5px;">
+        <p style="position: absolute; top: 0; left:10px; border: 2px solid white;">body</p>
+            <div class="box-model_main" style="position: relative; margin: auto; width: 200px; height: 200px; border: 2px solid orange; padding: 5px;">
+                <p style="position: absolute; top: 0; left:10px; border: 2px solid white;">main-content</p>
+                    <div class="box-model_article" style="position: relative; margin: auto; width: 100px; height: 100px; border: 2px solid aqua; padding: 5px;">
+                        <p style="position: absolute; top: 0; left:10px; border: 2px solid white;">content</p>
+                    </div>
+            </div>
+    </div>
+    <h3>Navigation in Box Model</h3>
+    <div 
+        class="navigation" 
+        style="background-color: aqua; border: 2px solid red; width: 100%; height: 50px; padding: 0 5px; display: flex; flex-direction: row; justify-content: space-between;">
+        <div 
+            class="title" 
+            style="border: 2px solid red; color: black; height: 100%; display: flex; justify-content: center; align-items: center;">
+            <p>title</p>
+        </div>
+        <div 
+            class="nav_bar"
+            style="display: flex; flex-direction: row; height: 100%; justify-content: center; align-items: center; gap: 5px;">
+            <a 
+                href=""
+                style="text-decoration: none; padding: 5px; border: 2px solid red;"
+                >lorem</a>
+            <a 
+                href=""
+                style="text-decoration: none; padding: 5px; border: 2px solid red;"
+                >lorem</a>
+            <a 
+                href=""
+                style="text-decoration: none; padding: 5px; border: 2px solid red;"
+                >lorem</a>
+        </div>
+    </div>
+
+</pre>
+            <p>Secara konsep, box model terdiri dari 4 bagian</p>
+            <ul>
+              <li>
+                <p>margin</p>
+              </li>
+              <li>
+                <p>border</p>
+              </li>
+              <li>
+                <p>padding</p>
+              </li>
+              <li>
+                <p>content</p>
+              </li>
+            </ul>
+            <pre>
+    <div 
+        class="margin"
+        style="margin: auto; border: 5px dotted red; text-align: center;"
+            >Margin
+        <div 
+            class="border"
+            style="border: 5px double grey;"
+                >Border
+            <div 
+                class="padding"
+                style="border: 5px solid purple;"
+                    >Padding
+                <div 
+                    class="content"
+                    style="background-color: aqua; color: black;"
+                    >Content
+                </div>
+            </div>
+        </div>
+    </div>
+</pre>
+          </li>
+          <li class="sub_container" id="margin">
+            <h2 class="sub">margin</h2>
+            <p>
+              margin <b>vertikal akan memilih margin terbesar dari kedua box</b>
+            </p>
+            <p>
+              margin <b>horizontal akan mengkalkulasikan kedua box margin</b>
+            </p>
+            <p>penggunaan <b>auto</b> hanya khusus untuk <b>horizontal</b></p>
+            <pre id="short-hand-margin">
+    short-hand:
+    margin: 50px; (atas, bawah, kanan, kiri)
+    margin: 10px auto; (atas, bawah | kanan, kiri)
+    margin: 10px 30px 10px; (atas | kanan, kiri | bawah)
+    margin: 10px 20px 30px 40px; (atas | kanan | bawah | kiri)
+</pre
+            >
+          </li>
+          <li class="sub_container" id="padding">
+            <h2 class="sub">Padding</h2>
+            <p>padding ga bisa di kasih nilai negatif</p>
+            <p>
+              padding dapat mempengaruhi ukuran box <b>(gunakan box-sizing)</b>
+            </p>
+            <p>
+              <b>short-hand</b> padding sama seperti
+              <a href="#short-hand-margin">short-hand margin</a>
+            </p>
+          </li>
+          <li class="sub_container" id="border">
+            <h2 class="sub">border</h2>
+            <p>
+              border dapat mempengaruhi ukuran box <b>(gunakan box-sizing)</b>
+            </p>
+
+            <p>
+              Border adalah garis yang mengelilingi element, terdapat beberapa
+              tipe border sebagai berikut:
+            </p>
+            <pre>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border" class="doc"></a>
+<a href="https://codepen.io/sindu12/pen/bGZeoda?editors=1100" class="prac"></a>
+</pre>
+          </li>
+          <li class="sub_container" id="float">
+            <h2 class="sub">float</h2>
+            <p>
+              Folat merupakan properti CSS untuk mengatur posisisebuah element
+            </p>
+            <p>
+              <b>normal flow</b>, seperti yang sebelumnya di pelajari, ketika
+              element inline kita ubah menjadi block maka element tersebut dapat
+              diubah dimensinya(width & height). itu adalah
+              <b>normal-normal saja(normal flow)</b>
+            </p>
+            <p>
+              <b>out-of flow</b>, ketika sebuah element diberikan css properti
+              <b>float (left & right)</b>
+            </p>
+            <p>properti float memiliki tiga value:</p>
+            <ul>
+              <li>
+                <h3>none</h3>
+                <p>nilai default</p>
+              </li>
+              <li>
+                <h3>left</h3>
+                <p>element akan dipaksa ke kiri</p>
+              </li>
+              <li>
+                <h3>right</h3>
+                <p>element akan di paksa ke kanan</p>
+              </li>
+            </ul>
+          </li>
+          <li class="sub_container" id="position">
+            <h2 class="sub">position</h2>
+            <p>
+              terdapat empat value yang dapat digunakan pada properti position:
+            </p>
+            <ul>
+              <li>
+                <h3>static</h3>
+                <p>
+                  static merupakan <b>value default</b> dari properti position
+                </p>
+                <p>
+                  menggunakan value
+                  <b>selain static/non-static(relative, absolute dan fixed)</b>
+                  akan membuat element tsb menjadi <b>berbeda dimensi</b> dengan
+                  element yang memiliki value static. Sehingga element yang
+                  memiliki value selain static(relative, absolute dan fixed)
+                  dapat mengakses properti
+                  <b
+                    >top, left, bottom, right atau inset:"top" | "right" |
+                    "bottom" | "left";</b
+                  >
+                </p>
+              </li>
+              <li>
+                <h3>relative</h3>
+                <p></p>
+              </li>
+              <li>
+                <h3>absolute</h3>
+                <p></p>
+              </li>
+              <li>
+                <h3>fixed</h3>
+                <p>
+                  Element yang menggunakan value <b>fixed</b>, dia akan bergerak
+                  <b>relatif terhadap window browser</b> dan
+                  <b>tidak memperdulikan parent-nya</b> walaupun parent bersifat
+                  non-static
+                </p>
+              </li>
+              <li>
+                <h3>Sticky</h3>
+                <p>
+                  position sticky membuat
+                  <b>elemen berperilaku seperti relative</b> sampai mencapai
+                  <b>batas tertentu</b> selama pengguliran, di mana elemen
+                  tersebut
+                  <b>menjadi fixed dan tetap pada posisi yang ditentukan</b>.
+                </p>
+                <p>
+                  Properti top, right, bottom, dan left sangat penting karena
+                  menentukan batas di mana elemen beralih dari perilaku relative
+                  menjadi fixed.
+                </p>
+                <p>
+                  Misalnya, dengan mengatur top: 0;, elemen akan menempel pada
+                  bagian atas halaman saat mencapai bagian atas viewport.
+                </p>
+                <pre>
+    <div style="background-color: #333; color: white; padding: 10px; text-align: center;">
+        <h1>Header - Sticky Example</h1>
+      </div>
+    
+      <div style="background-color: #f2f2f2; padding: 10px; position: sticky; top: 0; z-index: 9;">
+        <ul style="list-style-type: none; margin: 0; padding: 0; display: flex; justify-content: space-around;">
+          <li><a href="#section1">Section 1</a></li>
+          <li><a href="#section2">Section 2</a></li>
+          <li><a href="#section3">Section 3</a></li>
+        </ul>
+      </div>
+    
+      <div id="section1" style="padding: 20px; margin: 20px; border: 1px solid #ddd; height: 1000px;">
+        <h2>Section 1 Content</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fermentum massa sit amet tellus varius, a vestibulum nisl fermentum.</p>
+      </div>
+    
+      <div id="section2" style="padding: 20px; margin: 20px; border: 1px solid #ddd; height: 1000px;">
+        <h2>Section 2 Content</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fermentum massa sit amet tellus varius, a vestibulum nisl fermentum.</p>
+      </div>
+    
+      <div id="section3" style="padding: 20px; margin: 20px; border: 1px solid #ddd; height: 1000px;">
+        <h2>Section 3 Content</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fermentum massa sit amet tellus varius, a vestibulum nisl fermentum.</p>
+      </div>
+    
+      <div style="background-color: #333; color: white; padding: 10px; text-align: center;">
+        <p>Footer</p>
+      </div>
+</pre>
+              </li>
+            </ul>
+          </li>
+          <li class="sub_container" id="border-radius">
+            <h2 class="sub">border radius</h2>
+            <p>
+              Border radius berfungsi untuk menumpulkan ujung-ujung kotak,
+              semakin besar valuenya maka semakin tumpul
+            </p>
+            <p>
+              Ketika besarnya
+              <b>border radius setengah dari besarnya dimensi element</b>, maka
+              element tersebut akan membentuk lingkaran
+            </p>
+            <pre>
+    <div class="container" style="display: flex; flex-direction: row; justify-content: space-around; width: 100%;">
+        <div 
+            class="block1" 
+            style="width: 200px; height: 200px; background-color: red; border-radius: 50%; text-align: center; line-height: 200px;" 
+            title="border-radius: 50%;">border-radius: 50%;</div>
+        <div 
+            class="block2" 
+            style="width: 200px; height: 200px; background-color: red; border-radius: 100px; text-align: center; line-height: 200px;" 
+            title="border-radius: 100px;(width:200px; height:200px;)">border-radius: 100px;</div>
+    </div>
+    <p>short-hand: ( <a href="#short-hand-margin">short-hand-margin</a> )</p>
+</pre>
+          </li>
+          <li class="sub_container" id="opacity">
+            <h2 class="sub">opacity</h2>
+            <p>Sebuah properti CSS yang mengatur transparansi element</p>
+            <p>
+              ketika <b>parent element</b> memiliki properti opacity, maka
+              <b>transparansinya akan mewarisi ke child-nya</b>
+            </p>
+            <pre
+              style="
+                background-image: linear-gradient(
+                  to top left,
+                  grey,
+                  black,
+                  grey,
+                  black,
+                  grey,
+                  black,
+                  grey,
+                  black,
+                  grey,
+                  black,
+                  grey,
+                  black,
+                  grey,
+                  black,
+                  grey,
+                  black,
+                  grey,
+                  black,
+                  grey,
+                  black
+                );
+              "
+            >
+    <div 
+        style="width: 100%; display: flex; flex-direction: row; justify-content: space-around; margin: 30px 0;">
+        <div 
+            style="width: 200px; height: 200px; text-align: center; line-height: 200px; background-color: purple; opacity: .5;"
+            title="opacity: .5 ;">Hover Me!
+        </div>
+        <div
+            style="width: 200px; height: 200px; text-align: center; line-height: 200px; background-color: purple; opacity: 1;"
+            title="opacity: 1 ;">Hover Me!
+        </div>
+    </div>
+</pre>
+          </li>
+          <li class="sub_container" id="box-shadow">
+            <h2 class="sub">box Shadow</h2>
+            <pre>
+    <div style="width: 100%; display: flex; flex-direction: row; ">
+        <div 
+            style="width: 150px; height: 150px; text-align:center; line-height:150px; background-color: red; margin: auto; box-shadow: 5px 5px 0.5px white; border: 3px solid black; padding: 10px;"
+            title="box-shadow: 5px 5px 0.5px white;"
+            >Hover Me!</div>
+            <div 
+            style="width: 150px; height: 150px; text-align:center; line-height:150px; background-color: red; margin: auto; box-shadow: inset 5px 5px 0.5px white; border: 3px solid black; padding: 10px;"
+            title="box-shadow: inset 5px 5px 0.5px white;"
+            >Hover Me!(inset)</div>
+            <div 
+            style="width: 150px; height: 150px; text-align:center; line-height:150px; background-color: red; margin: auto; box-shadow: 0px 0px 0.5px 3px white; border: 3px solid black; padding: 10px;"
+            title="box-shadow: 0px 0px 0.5px 3px white;"
+            >Hover Me!(spread)</div>
+        </div>
+    box-shadow: <span style="border-bottom: 4px solid red;">"inset"</span> | <span style="border-bottom: 4px solid green;">"x"px | "y"px | "blur"px</span> | <span style="border-bottom: 4px solid red;">"spread"px</span> | <span style="border-bottom: 4px solid green;">"color"(hex, rgb/rgba, dst.)</span>;
+    <span style="border-bottom: 4px solid green;">Wajib</span> | <span style="border-bottom: 4px solid red;">Tidak Wajib</span>
+    <h2>Multiple Box Shadow</h2>
+    <div style="width: 120px; height: 120px; background-color: salmon; margin: auto; box-shadow: 5px 5px 0 white, -5px -5px 0 red; "></div>
+    <p style="text-align: center; margin-top: -30px;">box-shadow: 5px 5px 0 white, -5px -5px 0 red;</p>
+</pre>
+          </li>
+          <li class="sub_container" id="text-shadow">
+            <h2 class="sub">Text Shadow</h2>
+            <p>
+              Implementasinya hampir sama kaya
+              <a href="#box-shadow">Box Shadow</a>, yang membedakan
+              <b>text-shadow tidak memiliki inset</b>
+            </p>
+            <pre>
+Dokumentasi: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow" class="doc"></a>
+/* offset-x | offset-y | blur-radius | color */
+text-shadow: 1px 1px 2px black;
+
+/* color | offset-x | offset-y | blur-radius */
+text-shadow: #fc0 1px 0 10px;
+
+/* offset-x | offset-y | color */
+text-shadow: 5px 5px #558abb;
+
+/* color | offset-x | offset-y */
+text-shadow: white 2px 5px;
+
+/* offset-x | offset-y
+/* Use defaults for color and blur-radius */
+text-shadow: 5px 10px;
+
+/* Global values */
+text-shadow: inherit;
+text-shadow: initial;
+text-shadow: revert;
+text-shadow: revert-layer;
+text-shadow: unset;
+
+</pre>
+          </li>
+          <li class="sub_container" id="gradient">
+            <h2 class="sub">Gradient</h2>
+            <p>
+              Gradient adalah <b>teknik untuk memberikan warna gradasi</b> pada
+              element
+            </p>
+            <p>
+              gradient <b>bukan</b> properti baru dari CSS 3, melainkan value
+              untuk <b>background-image</b>
+            </p>
+            <p>Gradient atau gradasi terdapat dua teknik:</p>
+            <ol type="A">
+              <li>
+                <h3>linear-gradient</h3>
+                <p>
+                  linear gradient memberikan gradasi warna secara
+                  <b>garis lurus</b>
+                </p>
+                <pre>
+
+<b>> sintaks Sederhana</b>
+    background-image:linear-gradient("warna awal", "warna akhir");
+<div 
+    style="width:200px; height:200px; margin: 0 auto; background-image: linear-gradient(red, green); text-align: center; line-height: 200px;" 
+    title="background-image: linear-gradient(red, green)">Hover Me</div>
+                                
+<b>> multiple color</b>
+    background-image:linear-gradient("warna-1", "warna-2", "warna-3", ..., "warna-n")
+<div 
+    style="width: 200px; height:200px; margin: 0 auto; background-image:linear-gradient(blue, orange, coral); text-align: center; line-height:200px;"
+    title="background-image:linear-gradient(blue, orange, coral);"
+    >Hover Me</div>
+                                
+<b>> sintaks lengkap</b>
+    background-image:linear-gradient("sudut/arah", "warna-1", ..., "warna-n");
+<div
+    style="width: 100%; display:flex; justify-content:space-around; flex-direction:row;">
+    <div
+    style="width: 200px; height:200px; color:red; text-align: center; line-height: 200px; background-image:linear-gradient(45deg, pink, grey, purple);"
+    title="background-image:linear-gradient(45deg, pink, grey, purple);"
+    >Hover Me!(45deg)</div>
+<div 
+    style="width:200px; height: 200px; text-align: center; color: red; line-height:200px; background-image:linear-gradient(to top left, aqua, green);"
+    title="background-image:linear-gradient(to top left, aqua, green);"
+    >Hover Me!(to top left)</div>
+    </div>
+                            
+</pre>
+              </li>
+              <li>
+                <h3>radial-gradient</h3>
+                <p>radial gradient memberikan warna secara <b>melingkar</b></p>
+                <p><b>!!Lebih Lengkapnya TONTON Di Youtube WPU</b></p>
+              </li>
+            </ol>
+          </li>
+          <li class="sub_container" id="filter">
+            <h2 class="sub">filter Effect</h2>
+            <ol type="A">
+              <li>
+                <h3>filter</h3>
+<pre>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_filter_effects" class="doc"></a> <a href="" class="prac"></a>
+</pre>
+              </li>
+              <li>
+                <h3>backdrop-filter</h3>
+              </li>
+            </ol>
+          </li>
+          <li class="sub_container" id="transform">
+            <h2 class="sub">transform</h2>
+            <p>
+              Properti ini berfungsi untuk melakukan transformasi Elemen,
+              properti transform terbagi menjadi dua tipe:
+            </p>
+            <ol type="A">
+              <li>
+                <h3>Transformasi <b>2D</b></h3>
+                <p>Melakukan transformasi secara dua dimensi</p>
+                <ul>
+                  <li>
+                    <h4>scale</h4>
+                    <p>memperbesar / memperkecil</p>
+                  </li>
+                  <li>
+                    <h4>rotate</h4>
+                    <p>memutar</p>
+                  </li>
+                  <li>
+                    <h4>skew</h4>
+                    <p>membuat condong atau miring</p>
+                  </li>
+                  <li>
+                    <h4>translate</h4>
+                    <p>mengubah posisi</p>
+                  </li>
+                </ul>
+                <pre>
+<b>>Scale</b>
+scale(angka) | scale(x, y) | scaleX(angka) | scaleY(angka)
+    <div 
+        style="width: 100px; height: 100px; background-color: maroon; text-align: center; line-height: 100px; margin-top:-30px;" 
+        onmouseover="this.style.transform='scale(1.3)'"
+        onmouseout="this.style.transform='scale(1)'">scale</div>
+<b>rotate</b>
+rotate(deg) | rotateX(deg) | rotateY(deg)
+    <div 
+        style="width: 100px; height: 100px; background-color:maroon; text-align: center; line-height:100px; margin-top:-30px;"
+        onmouseover="this.style.transform='rotate(45deg)'"
+        onmouseout="this.style.transform='rotate(0deg)'">rotate</div>
+<b>>skew</b>
+skew(deg) | skew(x, y) | skewX(deg) | skewY(deg)
+    <div
+        style="width:100px; height:100px; background-color:maroon; text-align:center; line-height:100px; margin-top:-30px;"
+        onmouseover="this.style.transform='skew(20deg)'"
+        onmouseout="this.style.transform='skew(0deg)'"
+        >skew</div>
+<b>>translalte</b>
+translate(angka) | translate(x, y) | translateX(angka) | translateY(angka)
+    <div
+        style="width: 100px; height:100px; background-color:maroon; text-align:center; line-height:100px; margin-top:-30px;"
+        onmouseover="this.style.transform='translate(90px)'"
+        onmouseout="this.style.transform='translate(0)'"
+        >translate</div>
+<b>> Multiple Transform</b>
+transform: skew() translate() rotate() scale();
+    <div 
+        style="width: 200px; height: 200px; background-color: maroon; text-align: center; line-height:200px; transition: .3s ease-in;"
+        onmouseover="this.style.transform='skew(10deg, 20deg) translate(50px) rotate(90deg) scale(1.5)'"
+        onmouseout="this.style.transform='unset'"
+        >Multiple Transform</div>
+</pre>
+              </li>
+              <li>
+                <h3>Transformasi <b>3D</b></h3>
+                <pre>
+<b>> scale3d</b>
+  transform: scale3d(number(x), angka(y), angka(z));
+  Pada sumbu <b>z</b>, kususnya pada scale3d jika nilai positif akan memberikan
+  efek seakan-akan object di <b>zoom-in</b> dan sebaliknya
+  <p align="center">!!Perubahan Memang Ngga Terlihat, karna perubahannya kaya z-index!!</p>
+    <div
+      style="width: 150px; height: 150px; margin-top:-60px; background-color: maroon; transition: .5s ease-in; transform: scaleZ(1);"
+      onmouseover="this.style.transform='scaleZ(3)'"
+      onmouseout="this.style.transform='scaleZ(1)'"
+    >Hover Me!</div>
+<b>> rotate3d</b>
+    transform:rotate3d(number(x), number(y), number(z), deg);
+<div
+    style="width: 150px; height: 150px; background-color: maroon; text-align: center; line-height: 150px; transition: .3s;"
+    onmouseover="this.style.transform='rotate3d(5, 3, 0, 90deg)'"
+    onmouseout="this.style.transform='rotate3d(0, 0, 0, 0deg)'"
+    >Hover Me!</div>
+
+    !! Belum Selesai !!
+    -perspective
+    -matrix
+    -dll.
+
+</pre>
+              </li>
+            </ol>
+          </li>
+          <li class="sub_container" id="transition">
+            <h2 class="sub">transition</h2>
+            <p>
+              berfungsi untuk memberikan transisi pada object agar terlihat
+              <b>halus</b>
+            </p>
+            <p>
+              transition:
+              <span style="border-bottom: 2px solid red">"property"</span>
+              <span style="border-bottom: 2px solid green">"durasi(s/ms)"</span>
+              <span style="border-bottom: 2px solid red">"fungsi" "delay"</span
+              >;
+            </p>
+            <ul>
+              <li>
+                <h3>property</h3>
+                <p>
+                  <b>Parameter property</b> berfungsi untuk menuju
+                  <b
+                    >properti css mana saja yang ingin diberikan transisi jika
+                    terjadi perubahan value</b
+                  >
+                </p>
+                <p>
+                  Secara <b>default value</b> dari parameter property adalah
+                  <b>all</b>.
+                </p>
+                <pre>
+    <p>!!ERROR!!</p>
+    <div class="container-transition-example">
+        <div class="box-transition-example">Hover Me!</div>
+    </div>
+> transition: translate .5s;
+> <b>rotate diberikan transition</b> sebanyak .5s
+> <b>background-color "TIDAK" diberikan transition</b>
+</pre>
+              </li>
+              <li>
+                <h3>durasi(s/ms)</h3>
+                <p>
+                  Menentukan durasi transisi bisa dalam bentuk second(s) atau
+                  milisecond(ms)
+                </p>
+              </li>
+              <li>
+                <h3 id="timing-function">timing-function / fungsi transisi</h3>
+                <pre>
+<b>> ease</b>
+<div
+    class="container-transition-example">
+    <div
+        class="box-transition-example ease"></div></div>
+<b>> ease-in</b>
+<div
+    class="container-transition-example">
+    <div
+        class="box-transition-example ease-in"></div></div>
+<b>> ease-out</b>
+<div
+    class="container-transition-example">
+    <div
+        class="box-transition-example ease-out"></div></div>
+<b>> ease-in-out</b>
+<div
+    class="container-transition-example">
+    <div
+        class="box-transition-example ease-in-out"></div></div>
+<b>> linear</b>
+<div
+    class="container-transition-example">
+    <div
+        class="box-transition-example linear"></div></div>
+<b>> cubic-bezier()</b>
+<div
+    class="container-transition-example">
+    <div
+        class="box-transition-example cubic-bazier"></div></div>
+</pre>
+              </li>
+              <li>
+                <h3>delay</h3>
+                <pre>
+    <div
+    class="container-transition-example delay">
+    <div
+        class="box-transition-example cubic-bazier"
+        ></div></div>
+</pre>
+              </li>
+            </ul>
+            <pre>
+    transition: <span style="border-bottom:2px solid red">"property"</span> <span style="border-bottom:2px solid green">"durasi(s/ms)"</span> <span style="border-bottom: 2px solid red;">"fungsi" "delay"</span>;
+    *<span style="border-bottom:2px solid green">wajib</span>
+    *<span style="border-bottom:2px solid red">tidak wajib</span>
+    <div 
+        style="width: 150px; height: 150px; background-color: #f234; transition: .5s ease-in-out; text-align: center; line-height: 150px;"
+        title="transition: .3s ease-in-out;"
+        >Hover Me!</div>
+</pre>
+          </li>
+          <li class="sub_container" id="animation">
+            <h2 class="sub">animation</h2>
+            <ol type="A">
+              <li>
+                <h3>Animation <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation" class="doc"></a> <a href="https://codepen.io/sindu12/pen/PoLbwxP?editors=1100" class="prac"></a></h3>
+                <p>peroperti animation sebenarnya adalah shorthand dari CSS animation, Selengkapnya:</p>  
+<pre>
+<b>> Animation Syntax</b>
+
+  /* @keyframes/animation duration | easing/timing function | delay | iteration-count | 
+  direction | fill-mode | play-state | name */
+  <b>animation: 3s ease-in 1s 2 reverse both paused slidein;</b>
+
+  /* @keyframes/animation duration | easing-function | delay | name ("WAJIB") */
+  <b>animation: 3s linear 1s slidein;</b>
+
+  /* two animations */
+  <b>animation:
+    3s linear slidein,
+    3s ease-out 5s slideout;</b>
+
+animation duration  : > Durasi keyframes/animation <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration" class="doc"></a>
+                      > <b>animation-duration: 3s;</b>
+timing functoin     : > easing/timing function <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function" class="doc"></a>
+                      > <b>animation-timing-function: ease-in-out;</b>
+delay               : > Delay sebelum animasi dijalankan <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay" class="doc"></a>
+                      > <b>animation-delay: 2s;</b>
+iterration          : > angka | infinite (pengulangan berapa kali?) <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-iteration-count" class="doc"></a>
+                      > <b>animation-iteration-count: 1.5;</b>
+direction           : > normal (berjalan dari awal sampai akhir) <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction" class="doc"></a>
+                      > reverse (berjalan dari akhir sampai depan)
+                      > alternate (berjalan dari awal sampai akhir dan kembali dari akhir sampai awal)
+                      > alternate-reverse (berjalan dari akhir sampai awal dan kembali dari awal sampai akhir)
+                      > <b>animation-direction: alternate;</b>
+fillmode            : > untuk menentukan akhir dari transisi <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode" class="doc"></a>
+                      > none (nilai default, berhenti di keadaan awal object)
+                      > forwards (berhenti di keadaan akhir animasi)
+                      > backwards (kaya none)
+                      > <b>animation-fill-mode: forwards;</b>
+play state          : > Membuat animasi dijalankan(running) atau berhenti (paused) <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-play-state" class="doc"></a>
+                      > <b>animation-play-state: paused;</b>
+name                : > nama animation <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-name" class="doc"></a>
+                      > animation-name: myAnimation;
+
+
+// Pembuatan animation
+    @keyframe [keyframe-name] {
+        from {
+            [css property]
+        }
+        to {
+            [css property]
+        }
+    }
+
+</pre>
+              </li>
+              <li>
+                <h3>Animation Timeline <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline" class="doc"></a></h3>
+                <p><b>animation-timeline</b> adalah properti CSS yang berfungsi untuk menentukan timeline yang digunakan untuk <b>mengontrol perubahan animasi</b>, berikut beberapa type timeline yang dapat di set pada properti <b>animation-timeline</b></p>
+                <ol type="a">
+                  <li>
+                    <h4>scroll-timeline <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-timeline" class="doc"></a> <a href="https://codepen.io/sindu12/pen/MWxjzdj" class="prac"></a></h4>
+                    <p>scroll-timeline adalah shorthand dari propert CSS yang digunakan untuk <b>mendefinisikan sebuah nama <i>scroll progress timeline</i></b></p>
+<pre>
+<b>> Penggunaan</b> <a href="https://codepen.io/sindu12/pen/MWxjzdj" class="prac"></a>
+  Dalam penggunaannya, membutuhkan beberapa property lain sehingga progres scroll element 
+  dapat dijadikan timeline animasi:
+  <b>1. timeline-scope</b>
+    Properti ini berfungsi untuk menentukan nama timeline yang akan kita buat 
+    <b>(harus menggunakan dua tanda "--".)</b> dan properti ini berfungsi untuk
+    menentukan scope element mana saja yang dapat menggunakan timeline ini.
+    (!!Baca notes pada source code!!)
+    <b><i>contoh: "timeline-scope:--myScroller;"</i></b>
+
+  <b>2. scroll-timeline</b>
+    Properti ini berfungsi untuk menjadikan element yang memiliki properti ini Apabila
+    memiliki scroll, maka <b>progres scroll tersebut akan menjadi timeline animasi</b>
+    <b><i>contoh: scroll-timeline:--myScroller;</i></b>
+
+  <b>3. animation-timeline</b>
+    Element yang memiliki properti animation-timeline, <b>maka jalannya animasi pada element
+      terebut mengikuti progres scroll element terkait.</b>
+      <b><i>contoh: animation-timeline:--myScroller;</i></b>
+</pre>
+                  </li>
+                  <li>
+                    <h4></h4>
+                    <p></p>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <h3>Animation Range <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-range" class="doc"></a></h3>
+                <p></p>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </article>
+    </main>
+    <script src="./../src/js/index.js"></script>
+  </body>
+</html>

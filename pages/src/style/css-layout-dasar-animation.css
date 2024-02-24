@@ -1,0 +1,20 @@
+.keyframe-box {
+    width: 100px; height: 100px; background-color: rgb(0, 255, 0); 
+    display: flex; justify-content: center; align-items: center;
+    color: whitesmoke;
+    animation: keyframe-example 1s ease 3 alternate forwards;
+}
+
+@keyframes keyframe-example {
+    0% {
+        width: 100px;
+    }
+    50% {
+        width: 300px;
+        height: 100px;
+    }
+    100%{
+        width: 300px;
+        height: 300px;
+    }
+}
